@@ -22,7 +22,7 @@ that migrates the name to the following JSON format ```{
 ## Simplest way 
 The simplest way is to use the docker file provided in the project . This assumes that you have a docker installation in your PC
 * clone the project with the command ```git clone https://github.com/bgpalan/code-challenge.git``` and switch to the ```code-challange/docker``` folder
-* Simply type ```docker build -t challange:latest```. This will build a docker image with name challange 
+* Simply type ```docker build -t challange:latest .```(Notice the dot in the command, dont miss it)  This will build a docker image with name challange 
 * Then type ```docker run -it -p "8080:8080" challange``` . This command will 
     * clone the repo 
     * Build the project , RUN ALL THE UNIT TESTS by downloading all the dependencies
