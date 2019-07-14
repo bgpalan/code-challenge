@@ -11,8 +11,7 @@ that migrates the name to the following JSON format ```{
 * Framework used : Spring boot 
 
 ### Assumptions 
-* Names are very tricky (It is different in different cultures ) and a perfect solution is not possible :) 
-* The Supported language is only English 
+* Names are very tricky (It is different in different cultures ) and a perfect solution is not possible :) , So I have assumed that the Supported language is only English 
 * The Salutation is optional and I have assumed that the salutation should have minimum of 2 chars and max of 4 . Possible examples are Mr. / Miss. , It is Quite possible to have spaces before or after the dot
 * Suffix is optional and is at the end of the name starting with a comma and ending in a dot. Comma can start or end with space and there could be a space before or after the dot
 * Name forms the middle of the string , It is mandatory might have middle name as well as last name. I have assumed that the first name should have a min length of 5 characters
@@ -20,6 +19,17 @@ that migrates the name to the following JSON format ```{
 
 ## Setup
 
+## Simplest way 
+The simplest way is to use the docker file provided in the project . This assumes that you have a docker installation in your PC
+* clone the project and switch to the ```docker``` folder
+* Simply type ```docker build -t challange:latest```. This will build a docker image with name challange 
+* Then type ```docker run -it -p "8080:8080" challange``` . This command will 
+    * clone the repo 
+    * Build the project , RUN ALL THE UNIT TESTS by downloading all the dependencies
+    * Start the server and expose the port (So your will be available at ```http://localhost:8080/api/v1/migrate```)
+* If you have completed the step head over to ```Using the service``` section !
+
+## A bit hard way :)
 ### Required Softwares 
 This project requires the following software installed in the computer 
 * JDK(> 1.8) 
