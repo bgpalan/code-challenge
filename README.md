@@ -14,8 +14,8 @@ that migrates the name to the following JSON format ```{
 * Names are very tricky (It is different in different cultures ) and a perfect solution is not possible :) 
 * The Supported language is only English 
 * The Salutation is optional and I have assumed that the salutation should have minimum of 2 chars and max of 4 . Possible examples are Mr. / Miss. , It is Quite possible to have spaces before or after the dot
-* Suffix optional and is at the end of the name starting with a comma and ending in a dot. Comma can start or end with space and there could be a space before or after the dot
-* Name forms the middle of the string , Name is mandatory might have middle name as well as last name. I have assumed that the first name should have a min length of 5 characters
+* Suffix is optional and is at the end of the name starting with a comma and ending in a dot. Comma can start or end with space and there could be a space before or after the dot
+* Name forms the middle of the string , It is mandatory might have middle name as well as last name. I have assumed that the first name should have a min length of 5 characters
 * The name is of the format ```Salutation. Firstname middleName Lastname , Suffix.```. Here Salutation, middleName, lastName and suffix are optional . Any name that does not match this is deemed as invalid 
 
 ## Setup
