@@ -12,21 +12,22 @@ that migrates the name to the following JSON format ```{
 
 ### Assumptions 
 * Names are very tricky (It is different in different cultures ) and a perfect solution is not possible :) , So I have assumed that the Supported language is only English 
-* The Salutation is optional and I have assumed that the salutation should have minimum of 2 chars and max of 4 . Possible examples are Mr. / Miss. , It is Quite possible to have spaces before or after the dot
+* The Salutation is optional and I have assumed that the salutation should have minimum of 2 chars and max of 4 . Possible examples are Mr. / Miss. , It is Quite possible to have spaces before or after the dot(When the salutation is less than 2 or more than 4 characters, The API will throw an error )
 * Suffix is optional and is at the end of the name starting with a comma and ending in a dot. Comma can start or end with space and there could be a space before or after the dot
-* Name forms the middle of the string , It is mandatory might have middle name as well as last name. I have assumed that the first name should have a min length of 5 characters
-* The name is of the format ```Salutation. Firstname middleName Lastname , Suffix.```. Here Salutation, middleName, lastName and suffix are optional . Any name that does not match this is deemed as invalid 
+* Name forms the middle of the string , It is mandatory might have middle name as well as last name. I have assumed that the first name should have a min length of 5 characters (When the first name is less than 5 characters, The API will throw an error )
+* The name is of the format ```Salutation. Firstname middleName Lastname , Suffix.```. Here Salutation, middleName, lastName and suffix are optional . (Any name that does not match this is deemed as invalid and the API will thrown an error) 
 
 ## Setup
 
 ## Simplest way 
 The simplest way is to use the docker file provided in the project . This assumes that you have a docker installation in your PC
-* clone the project and switch to the ```docker``` folder
+* clone the project with the command ```git clone https://github.com/bgpalan/code-challenge.git``` and switch to the ```code-challange/docker``` folder
 * Simply type ```docker build -t challange:latest```. This will build a docker image with name challange 
 * Then type ```docker run -it -p "8080:8080" challange``` . This command will 
     * clone the repo 
     * Build the project , RUN ALL THE UNIT TESTS by downloading all the dependencies
     * Start the server and expose the port (So your will be available at ```http://localhost:8080/api/v1/migrate```)
+    * wait for the process to complete (It takes about 40 seconds to complete) and the server to start 
 * If you have completed the step head over to ```Using the service``` section !
 
 ## A bit hard way :)
